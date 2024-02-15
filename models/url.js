@@ -6,7 +6,6 @@ const urlSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-      
     },
     redirectedURL: {
       type: String,
@@ -17,6 +16,10 @@ const urlSchema = new mongoose.Schema(
         timestamp: { type: Number },
       },
     ],
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+    },
   },
   { timestamps: true }
 );
